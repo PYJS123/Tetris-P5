@@ -3,9 +3,18 @@ let rows = 15,
   cols = 10;
 let xgap = rectw/cols,
   ygap = recth/rows;
+let level = 0,
+  lines = 0,
+  score = 0;
+let genos;
+
+function preload() {
+  genos = loadFont('assets/genos.ttf');
+}
 
 function setup() {
   createCanvas(windowWidth-10, windowHeight-10);
+  textFont(genos);
 }
 
 function draw() {
@@ -40,5 +49,16 @@ function drawMain() {
   fill(30);
   rect(width/2-230, height/2-315, -415, 630);
   rect(width/2+230, height/2-315, 415, 630);
+
+  // Text on side- level, lines, score, pause, quit, and next piece
+  /* LEVEL: Increment by 1 for every 10 lines
+  SCORE: One line cleared = 40 points.
+  Four or more at once (tetris) = 1200 */
+  textAlign(LEFT, TOP);
+  fill(255);
+  textSize(50);
+  text(`LEVEL: ${level}`, width/2-630, height/2-300, 385, 200);
+  text(`LINES: ${lines}`, width/2-630, height/2-50, 385, 200);
+  text(`SCORE: ${score}`, width/2-630, height/2+200, 385, 200);
   pop();
 }

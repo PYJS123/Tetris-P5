@@ -60,5 +60,20 @@ function drawMain() {
   text(`LEVEL: ${level}`, width/2-630, height/2-300, 385, 200);
   text(`LINES: ${lines}`, width/2-630, height/2-50, 385, 200);
   text(`SCORE: ${score}`, width/2-630, height/2+200, 385, 200);
+
+  text('NEXT PIECE', width/2+260, height/2-310, 385, 200);
+  fill(150);
+  strokeWeight(15);
+  stroke(100);
+  rect(width/2+260, height/2-245, 355, 200);
+
+  rect(width/2+260, height/2, 355, 100);
+  rect(width/2+260, height/2+145, 355, 100);
+  fill(0);
+  noStroke();
+  textAlign(CENTER, CENTER);
+  textSize(70);
+  text('PAUSE', width/2+437, height/2+35);
+  text('QUIT', width/2+437, height/2+180);
   pop();
 }

@@ -7,6 +7,7 @@ let level = 0,
   lines = 0,
   score = 0;
 let genos;
+let grid = new Array(cols);
 
 function preload() {
   genos = loadFont('assets/genos.ttf');
@@ -15,6 +16,12 @@ function preload() {
 function setup() {
   createCanvas(windowWidth-10, windowHeight-10);
   textFont(genos);
+  for (let i = 0; i < grid.length; i++) {
+    grid[i] = new Array(rows);
+    for (let j = 0; j < grid[i].length; j++) {
+      grid[i][j] = new Cell();
+    }
+  }
 }
 
 function draw() {

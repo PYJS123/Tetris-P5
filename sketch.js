@@ -27,6 +27,23 @@ function setup() {
 function draw() {
   background(50);
   drawMain();
+  drawBoard();
+}
+
+function drawBoard() {
+  for (let i = 0; i < cols; i++) {
+    for (let j = 0; j < rows; j++) {
+      push();
+      let x = width/2 - rectw/2 + xgap*i;
+      let y = height/2 - recth/2 + ygap*j;
+      fill(150);
+      if (grid[i][j].occ == true) {
+        fill(55, 105, 55);
+      }
+      rect(x, y, xgap, ygap);
+      pop();
+    }
+  }
 }
 
 function drawMain() {
